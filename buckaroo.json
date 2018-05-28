@@ -1,0 +1,6 @@
+{
+  "name": "MIDE",
+  "dependencies": {
+    "leethomason/tinyxml2": "4.0.1"
+  }
+}

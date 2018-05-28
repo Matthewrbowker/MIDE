@@ -25,14 +25,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    fileinterface.cpp \
-    source.cpp
-
-HEADERS += \
-        mainwindow.h \
-    fileinterface.h \
-    source.h
+        fileinterface.cpp \
+        source.cpp \
+        buckaroo/official/leethomason/tinyxml2/tinyxml2.cpp \
+    mainwindow.cpp \
+    sourcenode.cpp
 
 FORMS += \
-        mainwindow.ui
+    mainwindow.ui
+
+HEADERS += \
+    fileinterface.h \
+    source.h \
+    buckaroo/official/leethomason/tinyxml2/tinyxml2.h \
+    mainwindow.h \
+    sourcenode.h

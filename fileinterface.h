@@ -1,6 +1,9 @@
+#include <string>
+
+using namespace std;
+
 #ifndef FILEINTERFACE_H
 #define FILEINTERFACE_H
-
 
 class FileInterface
 {
@@ -11,15 +14,15 @@ private:
     string text;
 public:
     FileInterface();
-    FileInterface(string fileName);
-    loadFile(string fileName);
-    void setRemoteApi(string remoteApiTmp);
+    FileInterface(string);
+    void loadFile(string);
+    void setRemoteApi(string);
     string getRemoteApi();
-    void setLastUpdate(string lastUpdateTmp);
+    void setLastUpdate(string);
     string getLastUpdate();
-    void setTitle(string titleTmp);
+    void setTitle(string);
     string getTitle();
-    void setText(string textTmp);
+    void setText(string);
     string getText();
 };
 
