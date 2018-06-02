@@ -14,13 +14,13 @@ FileInterface::FileInterface(string fileName) {
     loadFile(fileName);
 }
 
-void FileInterface::newFile() {
+/*void FileInterface::newFile() {
 
 }
 
 void FileInterface::saveFile(string fileName) {
 
-}
+}*/
 
 void FileInterface::loadFile(string fileName) {
     tinyxml2::XMLDocument doc;
@@ -72,6 +72,7 @@ void FileInterface::loadFile(string fileName) {
     cout << title << endl;
     cout << "TESTING" << endl;
     //
+    file = fileName;
 }
 
 void FileInterface::setRemoteApi(string remoteApiTmp) {

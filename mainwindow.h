@@ -16,7 +16,6 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void setFileInterface(FileInterface *);
 
 private slots:
     void on_actionNew_triggered();
@@ -26,6 +25,10 @@ private slots:
     void on_actionSave_triggered();
 
     void on_actionExit_triggered();
+
+    void on_actionPaste_without_Formatting_triggered();
+
+    void on_actionRemotes_triggered();
 
 private:
     Ui::MainWindow *ui;

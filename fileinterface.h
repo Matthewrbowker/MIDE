@@ -12,6 +12,7 @@ private:
     string lastUpdate;
     string title;
     string text;
+    string file;
 public:
     FileInterface();
     FileInterface(string);
