@@ -16,7 +16,10 @@ private:
 public:
     FileInterface();
     FileInterface(string);
+    void newFile();
     void loadFile(string);
+    void saveFile(string = NULL);
+    bool isNewFile();
     void setRemoteApi(string);
     string getRemoteApi();
     void setLastUpdate(string);

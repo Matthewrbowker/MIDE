@@ -7,20 +7,26 @@ using namespace std;
 
 FileInterface::FileInterface()
 {
-
+    newFile();
 }
 
 FileInterface::FileInterface(string fileName) {
+    newFile();
     loadFile(fileName);
 }
 
-/*void FileInterface::newFile() {
+void FileInterface::newFile() {
+    file = "";
 
 }
 
 void FileInterface::saveFile(string fileName) {
 
-}*/
+}
+
+bool FileInterface::isNewFile() {
+    return (file.compare(""));
+}
 
 void FileInterface::loadFile(string fileName) {
     tinyxml2::XMLDocument doc;

@@ -31,7 +31,7 @@ void MainWindow::on_actionOpen_triggered()
                 "Open File",
                 //QDir::home(),
                 ".",
-                "MediaWiki IDE File (*.mide);MediaWiki IDE Template (*.midt)"
+                "MediaWiki IDE File (*.mide)"
             );
     if (!filename.isNull()) {
         cout << filename.toStdString() << endl;
@@ -43,7 +43,20 @@ void MainWindow::on_actionOpen_triggered()
 
 void MainWindow::on_actionSave_triggered()
 {
-
+    if(fi->isNewFile()) {
+        QString filename = QFileDialog::getSaveFileName(
+                    this,
+                    "Save File"
+                    ".",
+                    "MediaWiki IDE File (*.mide);MediaWiki IDE Template(*.midt)");
+        if (!filename.isNull()) {
+            cout << filename.toStdString() << endl;
+            fi->saveFile(filename.toStdString());
+        }
+    }
+    else {
+        fi->saveFile();
+    }
 }
 
 void MainWindow::on_actionExit_triggered()
