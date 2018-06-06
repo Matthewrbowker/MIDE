@@ -30,7 +30,8 @@ SOURCES += \
         buckaroo/official/leethomason/tinyxml2/tinyxml2.cpp \
     mainwindow.cpp \
     sourcenode.cpp \
-    remotedialog.cpp
+    remotedialog.cpp \
+    parser.cpp
 
 FORMS += \
     mainwindow.ui \
@@ -42,4 +43,5 @@ HEADERS += \
     buckaroo/official/leethomason/tinyxml2/tinyxml2.h \
     mainwindow.h \
     sourcenode.h \
-    remotedialog.h
+    remotedialog.h \
+    parser.h

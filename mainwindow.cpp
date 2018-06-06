@@ -29,8 +29,7 @@ void MainWindow::on_actionOpen_triggered()
     QString filename = QFileDialog::getOpenFileName(
                 this,
                 "Open File",
-                //QDir::home(),
-                ".",
+                QDir::homePath(),
                 "MediaWiki IDE File (*.mide)"
             );
     if (!filename.isNull()) {
@@ -71,7 +70,6 @@ void MainWindow::on_actionPaste_without_Formatting_triggered()
 
 void MainWindow::on_actionRemotes_triggered()
 {
-
-    RemoteDialog r(fi);
-    r.show();
+    RemoteDialog rd(fi);
+    rd.exec();
 }
