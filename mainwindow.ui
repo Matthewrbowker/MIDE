@@ -47,9 +47,18 @@
     </property>
     <addaction name="actionRemotes"/>
    </widget>
+   <widget class="QMenu" name="menuSources">
+    <property name="title">
+     <string>Sources</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionView_Sources"/>
+    <addaction name="actionQuick_Add_Source"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuRemotes"/>
+   <addaction name="menuSources"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNew">
@@ -98,6 +107,16 @@
   <action name="actionPaste_without_Formatting">
    <property name="text">
     <string>Paste without Formatting</string>
+   </property>
+  </action>
+  <action name="actionView_Sources">
+   <property name="text">
+    <string>View Sources</string>
+   </property>
+  </action>
+  <action name="actionQuick_Add_Source">
+   <property name="text">
+    <string>Quick Add Source</string>
    </property>
   </action>
  </widget>

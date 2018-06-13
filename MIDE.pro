@@ -31,11 +31,13 @@ SOURCES += \
     mainwindow.cpp \
     sourcenode.cpp \
     remotedialog.cpp \
-    parser.cpp
+    parser.cpp \
+    sources.cpp
 
 FORMS += \
     mainwindow.ui \
-    remotedialog.ui
+    remotedialog.ui \
+    sources.ui
 
 HEADERS += \
     fileinterface.h \
@@ -44,4 +46,5 @@ HEADERS += \
     mainwindow.h \
     sourcenode.h \
     remotedialog.h \
-    parser.h
+    parser.h \
+    sources.h

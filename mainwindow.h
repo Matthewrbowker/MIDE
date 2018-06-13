@@ -30,6 +30,8 @@ private slots:
 
     void on_actionRemotes_triggered();
 
+    void on_actionView_Sources_triggered();
+
 private:
     Ui::MainWindow *ui;
     FileInterface * fi;

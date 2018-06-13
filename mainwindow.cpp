@@ -5,6 +5,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "remotedialog.h"
+#include "sources.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -72,4 +73,10 @@ void MainWindow::on_actionRemotes_triggered()
 {
     RemoteDialog rd(fi);
     rd.exec();
+}
+
+void MainWindow::on_actionView_Sources_triggered()
+{
+    Sources s(fi);
+    s.exec();
 }
