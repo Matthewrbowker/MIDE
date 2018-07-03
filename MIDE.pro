@@ -32,7 +32,8 @@ SOURCES += \
     sourcenode.cpp \
     remotedialog.cpp \
     parser.cpp \
-    sources.cpp
+    sources.cpp \
+    mideexception.cpp
 
 FORMS += \
     mainwindow.ui \
@@ -47,4 +48,5 @@ HEADERS += \
     sourcenode.h \
     remotedialog.h \
     parser.h \
-    sources.h
+    sources.h \
+    mideexception.h

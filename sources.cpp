@@ -5,7 +5,7 @@ Sources::Sources(FileInterface *fiTmp, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Sources)
 {
-    ui->setupUi(this);
+    //ui->setupUi(this);
     fi = fiTmp;
 }
 

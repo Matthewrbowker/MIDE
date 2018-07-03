@@ -28,6 +28,7 @@ public:
     string getTitle();
     void setText(string);
     string getText();
+    void dump();
 };
 
 #endif // FILEINTERFACE_H

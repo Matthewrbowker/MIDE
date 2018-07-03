@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include "buckaroo/official/leethomason/tinyxml2/tinyxml2.h"
+#include "mideexception.h"
 
 using namespace std;
 
@@ -16,12 +17,16 @@ FileInterface::FileInterface(string fileName) {
 }
 
 void FileInterface::newFile() {
+    remoteApi = "";
+    lastUpdate = "";
+    title = "";
+    text = "";
     file = "";
 
 }
 
 void FileInterface::saveFile(string fileName) {
-
+    throw new exception();
 }
 
 bool FileInterface::isNewFile() {
@@ -31,16 +36,10 @@ bool FileInterface::isNewFile() {
 void FileInterface::loadFile(string fileName) {
     tinyxml2::XMLDocument doc;
     doc.LoadFile(fileName.c_str());
-    cout << "Testing" << endl;
-    cout << doc.ErrorName() << endl;
     tinyxml2::XMLNode * root = doc.FirstChildElement("mide");
-    // cout << doc.FirstChildElement("mide")->FirstChildElement("sources")->FirstChildElement("example")->GetText() << endl;
     if (root == nullptr) {
-        cout << "FAIL" << endl;
+        throw new MIDEException("Unknown root node, bad file format.");
         return;
-    }
-    else {
-        cout << "SUCCESS" << endl;
     }
     tinyxml2::XMLNode * article = root->FirstChildElement("article");
     tinyxml2::XMLNode * sources = root->FirstChildElement("sources");
@@ -48,36 +47,24 @@ void FileInterface::loadFile(string fileName) {
         cout << "FAIL" << endl;
         return;
     }
-    else {
-        cout << "SUCCESS" << endl;
-    }
 
     tinyxml2::XMLElement * remote = article->FirstChildElement("remote");
     if (remote == nullptr) {
         cout << "FAIL" << endl;
         return;
     }
-    else {
-        cout << "SUCCESS" << endl;
-    }
+
     // Actually load the data
     remoteApi = remote->Attribute("api");
-    cout << "SUCCESS" << endl;
     lastUpdate = remote->Attribute("last-update");
-    cout << "SUCCESS" << endl;
     title = remote->Attribute("title");
-    cout << "SUCCESS" << endl;
 
-    /*for(TiXmlElement* e = root->FirstChildElement("wave_manager"); e != NULL; e = e->NextSiblingElement("wave_manager"))
+    /*for(TiXmlElement* e = root->FirstChildElement("sources"); e != NULL; e = e->NextSiblingElement("sources"))
     {
         string wmName = e->Attribute("name");
 
     }*/
-    cout << remoteApi << endl;
-    cout << lastUpdate << endl;
-    cout << title << endl;
-    cout << "TESTING" << endl;
-    //
+
     file = fileName;
 }
 
@@ -111,4 +98,14 @@ void FileInterface::setText(string textTmp) {
 
 string FileInterface::getText() {
     return text;
+}
+
+void FileInterface::dump() {
+    cout << "Contents currently loaded: " << endl;
+    cout << remoteApi << endl;
+    cout << lastUpdate << endl;
+    cout << title << endl;
+    cout << text << endl;
+    cout << file << endl;
+
 }
