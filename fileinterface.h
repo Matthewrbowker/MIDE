@@ -13,6 +13,8 @@ private:
     string title;
     string text;
     string file;
+    bool modified;
+    void FileOperation(bool);
 public:
     FileInterface();
     FileInterface(string);
@@ -28,6 +30,7 @@ public:
     string getTitle();
     void setText(string);
     string getText();
+    string getFile();
     void dump();
 };
 

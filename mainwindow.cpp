@@ -36,6 +36,8 @@ void MainWindow::on_actionOpen_triggered()
     if (!filename.isNull()) {
         cout << filename.toStdString() << endl;
         fi->loadFile(filename.toStdString());
+        ui->articleText->setText(QString::fromStdString(fi->getText()));
+        setWindowTitle(QString::fromStdString(fi->getFile()));
     }
 
     return;
